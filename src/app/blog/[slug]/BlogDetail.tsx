@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Breadcrumb from "@/app/components/Breadcrumb/breadCrumb";
-interface BlogPost {
+export interface BlogPost {
   id: number;
   title: string;
   author: string;
@@ -85,10 +85,14 @@ const BlogDetail = ({ post }: { post: BlogPost }) => {
       } else if (block.type === "heading") {
         return (
           <h2
-            className={`text-white text-2xl mt-5 font-extrabold `}
+            className="text-white text-2xl mt-5 font-extrabold"
             key={index}
             id={block.id}
-            ref={(el) => (headingsRef.current[block.id] = el)}
+            ref={(el) => {
+              if (el) {
+                headingsRef.current[block.id] = el;
+              }
+            }}
           >
             {block.text}
           </h2>
@@ -129,10 +133,12 @@ const BlogDetail = ({ post }: { post: BlogPost }) => {
               .map((heading, index) => (
                 <li key={index} className="mb-2 text-white">
                   <a
-                    href={`#${heading.id}`}
+                    href={`#${heading.id ?? ""}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleQuickLinkClick(heading.id);
+                      if (heading.id) {
+                        handleQuickLinkClick(heading.id);
+                      }
                     }}
                     className={
                       activeHeading === heading.id

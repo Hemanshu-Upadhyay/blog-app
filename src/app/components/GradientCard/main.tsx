@@ -4,7 +4,19 @@ import Image from "next/image";
 import { BackgroundGradient } from "./gradientCard";
 import Link from "next/link";
 
-const BackgroundGradientCard = ({ title, author, image, slug }) => {
+interface CardProps {
+  title: string;
+  author: string;
+  image: string;
+  slug: string;
+}
+
+const BackgroundGradientCard: React.FC<CardProps> = ({
+  title,
+  author,
+  image,
+  slug,
+}) => {
   return (
     <Link href={`/blog/${slug}`} passHref>
       <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
