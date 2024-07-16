@@ -10,7 +10,7 @@ const photos: Photo[] = [
     id: "1",
     name: "Hemanshu Upadhyay",
     role: "Product Manager",
-    imageSrc: "/assets/hemanshu.jpg",
+    imageSrc: "/assets/hemanshu.png",
   },
   {
     id: "2",
@@ -40,7 +40,7 @@ const photos: Photo[] = [
     id: "7",
     name: "Aman",
     role: "SEO Engineer",
-    imageSrc: "/assets/Aman.png",
+    imageSrc: "/assets/aman.png",
   },
 ];
 

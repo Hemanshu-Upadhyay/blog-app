@@ -13,7 +13,7 @@ const people = [
     id: 2,
     name: "Hemanshu Upadhyay",
     designation: "Product Manager",
-    image: "/assets/hemanshu.jpg    ",
+    image: "/assets/hemanshu.png",
   },
   {
     id: 3,
